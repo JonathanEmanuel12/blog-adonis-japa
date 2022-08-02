@@ -1,0 +1,17 @@
+version: "3"
+
+services: 
+  postgres:
+    container_name: db_blog_container
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_DB: ${PG_DB_NAME}      
+    volumes:
+       - storage_db:/var/lib/postgres/data
+    ports:
+      - "5432:5432"
+
+volumes:
+    storage_db:
