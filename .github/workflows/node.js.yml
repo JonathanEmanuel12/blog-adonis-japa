@@ -18,11 +18,13 @@ jobs:
       postgres:
         image: postgres:latest
         env:
+          POSTGRES_HOST: postgres
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: lucid_test
+          POSTGRES_PORT: 5432
         ports:
-          - 5432:5432
+          - 5432:${POSTGRES_PORT}
 
     strategy:
       matrix:
