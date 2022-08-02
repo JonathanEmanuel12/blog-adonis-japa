@@ -9,6 +9,7 @@ export default class UsersController {
         const users = await User.query()
             .whereILike('name', `%${name}%`)
 
+            
         return response.internalServerError(users)
         return response.ok(users)
     }
